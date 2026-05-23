@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fonte amigável e arredondada */
+    background-color: #000000;
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+#secao-video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 40px); /* Centraliza considerando o padding do body */
+}
+
+header video {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#alfabeto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-letra {
+    background-color: #ffffff;
+    color: #ff6b6b;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.card-letra:hover {
+    transform: scale(1.1);
+    background-color: #ffe4e1;
+}
+
+.escondido {
+    display: none !important;
+}
+
+#btn-avancar {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#btn-avancar:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+#btn-avancar:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Adaptações para dispositivos móveis (Celulares e Tablets) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #secao-video {
+        min-height: calc(100vh - 20px); /* Ajusta para o novo padding do body */
+    }
+
+    #alfabeto-container {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 10px;
+    }
+
+    .card-letra {
+        font-size: 1.8rem;
+        padding: 15px 10px;
+    }
+}
